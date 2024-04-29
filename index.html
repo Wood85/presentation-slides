@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="slide-1">
+					<h2 class="slide-1-title">Docker for front-end developers</h2>
+				</section>
+				<section>
+					<img class = "dependency" src="images/msbuild_dependency_visualizer.png"  alt="dependency">
+				</section>
+				<section>
+					<img class = "docker-logo" src="images/docker-logo.png" width="400" alt="docker-logo">
+				</section>
+				<section>
+					<img class = "virtual" src="images/virtual-machines-compared-to-docker-containers.png" alt="virtual">
+				</section>
+				<section>
+					<img class = "docker-architecture" src="images/docker-architecture.png" alt="docker-architecture">
+				</section>
+				<section>
+					<img class = "dockerfile" src="images/dockerfile.png" alt="dockerfile">
+				</section>
+				<section>
+					<img class = "docker-compose" src="images/docker-compose.png" alt="docker-compose">
+				</section>
+				<section>
+					<img class = "docker-desktop" src="images/docker-desktop.png" alt="docker-desktop">
+				</section>
+				<section>
+					<img class = "docker-image" src="images/docker-image.png" alt="docker-image">
+				</section>
+				<section>
+					<img class = "docker-hub" src="images/docker-hub.png" alt="docker-hub">
+				</section>
+				<section class="without-docker">
+					<h3 class="without-docker__title">Without Docker</h3>
+					<ol class="without-docker__list">
+						<li>$ brew update</li>
+						<li>$ brew install mysql</li>
+						<li>...</li>
+						<li>$ \curl -sSL https://get.rvm.io | bash</li>
+						<li>...</li>
+						<li>$ rails s</li>
+					</ol>
+				</section>
+				<section class="lists">
+					<div class="list-1">
+						<h4>Frontend</h4>
+					  <ol>
+						  <li>Node.js >= 16</li>
+						  <li>npm >= 8</li>
+					  </ol>
+					</div>
+					<div class="list-2">
+						<h4>Backend</h4>
+					  <ol>
+						  <li>go1.18</li>
+						  <li>MySQL</li>
+						  <li>Redis</li>
+						  <li>Elasticsearch</li>
+						  <li>Capistrano</li>
+						  <li>Syslog</li>
+						  <li>Postgresql(comments)</li>
+					  </ol>
+					</div>
+				</section>
+				<section>
+					<div>
+						<h4>Server setup</h4>
+					  <ol>
+						  <li>Install GVM(https://github.com/moovweb/gvm)</li>
+						  <li>gvm install go1.18.13 --binary</li>
+							<li>gvm use go1.18.13 --default</li>
+							<li>In the project folder create a link to golang</li>
+							<li>Install gb go get github.com/constabulary/gb/...</li>
+							<li>Configure authorization git config --global url."git@git......</li>
+							<li>install dependencies gb vendor restore</li>
+							<li>Install, setup and start DB (link: ....)</li>
+							<li>npm run build (npm run build:dev)</li>
+							<li>npm start</li>
+					  </ol>
+				</section>
+				<section>
+					<div>
+						<h4>With Docker</h4>
+					  <ol>
+						  <li>$ docker-compose up api</li>
+						  <li>...</li>
+							<li>Listening localhost:8080</li>
+					  </ol>
+				</section>
+				<section>
+					<div>
+						<h4>Advantage of using docker</h4>
+					  <ol>
+						  <li>Consistency</li>
+						  <li>Portability</li>
+							<li>Isolation</li>
+					  </ol>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
